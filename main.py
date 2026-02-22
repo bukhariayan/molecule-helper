@@ -1,8 +1,6 @@
 from mendeleev import element
-import matplotlib.pyplot as plt
 compound = input('enter a binary compound (e.g. H2O) ')
-print(compound)
-#arr = list(compound)
+
 vsepr_shapes = {
     (1, 0): "linear",
     (2, 0): "linear",
@@ -59,10 +57,9 @@ def find_total_valence(elms, nums):
 arr = get_compound(compound)
 elms = arr[0]
 nums = arr[1]
-#print(elms)
-#print(arr)
+
+
 totalval, num = find_total_valence(elms, nums)
-print(f"total valence electrons: {totalval}")
 en = []
 #chooses central atom based on electronegativity
 for i in range(num):
@@ -76,7 +73,6 @@ if center == "H":
     f[elms.index("H")] = 10
     center = elms[f.index(min(f))]
 
-print(f"central atom: {element(center).name}")
 totalelms = []
 for i in range(num):
     for j in range(nums[i]):
@@ -107,6 +103,10 @@ for elm in totalelms:
         polar_bonds += 1
     else:
         nonpolar_bonds += 1
+
+print(f"compound given: {compound}")       
+print(f"total valence electrons: {totalval}")
+print(f"central atom: {element(center).name}")
 print(f"shared electron domains: {nbonds}")
 print(f"lone pairs: {lone}")
 print(f"shape: {vsepr_shapes[(nbonds, lone)]}")
