@@ -11,3 +11,6 @@ Because of this, it does not give information about bond order and number of sig
 * valence electrons
 * VSEPR Theory
 * bond polarity
+
+## Libraries used
+* mendeleev (for getting necessary element data such as valence electrons and electronegativities)
